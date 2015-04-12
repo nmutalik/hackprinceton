@@ -1,0 +1,7 @@
+<div class="spacer"></div>
+<h3>manage friends <input ng-model="query.$" class="input-box pull-right"></input></h3>
+<div class="spacer"></div>
+<ul class="list-group">
+  <li class="list-group-item" ng-show="query.$" ng-click="add()">{{query.$}} <span class='pull-right friend-btn'>add</span></li>
+  <li class="list-group-item" ng-repeat="friend in friends | orderBy: 'name' | filter: query" ng-click="remove(friend)">{{friend.name}} <span class='pull-right friend-btn'>remove</span></li>
+</ul>

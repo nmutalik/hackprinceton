@@ -1,0 +1,121 @@
+@import url(http://nicholastodor.com/sf/usesf.css);
+
+body {
+  margin-top: 60px;
+  padding: 10px;
+  background-color: #fffc00;
+  font-size: 20px;
+}
+
+* {
+  font-family: "San Francisco Display", sans-serif;
+  box-sizing: border-box !important;
+  border-radius: 0px !important;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: "San Francisco Display", sans-serif !important;
+}
+
+.wrap {
+  word-wrap: break-word;  
+}
+
+.snap {
+  width: 100%;
+  z-index: 100;
+}
+
+.fa {
+  cursor: pointer;
+}
+
+.refresh-wrapper {
+  position: relative;
+  left: -40px;
+  bottom: -10px;
+}
+
+.refresh-button {
+  position: absolute;
+}
+
+.row-spacer {
+  margin-bottom: 50px;
+}
+
+.video-wrapper {
+  position: relative;
+  pointer-events: none;
+}
+
+.video-wrapper * {
+  position: absolute;
+  pointer-events: none;
+}
+
+.btn-black {
+  background-color: none;
+  color: black;
+  border: 2px solid #fffc00;
+}
+
+.btn-black:hover {
+  border: 2px solid black;
+}
+
+.btn-black.active {
+  background-color: #2c3e50;
+  border: 2px solid black;
+  color: #fffc00;
+}
+
+.save-button {
+  background-color: #fffc00;
+  color: black;
+  border: 0;
+}
+
+.save-button:hover {
+  color: #fffc00;
+  background-color: black;
+  border: 0;
+}
+
+.save-button:focus {
+  outline: none;
+}
+
+.spacer {
+  height: 30px;
+}
+
+.input-box {
+  background-color: #fffc00;
+  border: 1px solid black;
+  padding: 10px;
+  margin-top: -15px;
+}
+
+.input-box:focus {
+  border: 3px solid black;
+  padding: 8px;
+  outline: none;
+}
+
+.list-group-item {
+  background-color: #fffc00;
+  border: 0px solid black;
+  padding: 5px 10px;
+}
+
+.list-group-item:hover {
+  border: 1px solid black;
+  padding: 4px 9px;
+  z-index: 10;
+}
+
+.friend-btn {
+  text-decoration: underline;
+  cursor: pointer;
+}
