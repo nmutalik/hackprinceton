@@ -1,21 +1,21 @@
-<h1>secondwindsnaps</h1>
+<h1 class="huge">secondwindsnaps</h1>
 <div class="refresh-wrapper"><i ng-click="refresh()" class="fa fa-refresh refresh-button"></i></div>
 <div class="container-fluid">
   <div class="row row-spacer" ng-repeat="row in snaps">
-    <div class="col-md-{{12/numColumns}} wrap" ng-repeat="snap in row">
+    <div class="col-md-{{12/numColumns}} wrap" title='{{snap}}' ng-repeat="snap in row">
       <div ng-switch="snap.media_type">
         <div ng-switch-when="0">
           <img class="snap" ng-src="{{snap.filename}}" />
         </div>
         <div ng-if="snap.mediatext" class="video-wrapper">
-          <img class="snap" ng-src="snap/{{snap.id}}/overlay.png" />
+          <img class="snap" ng-src="snap/{{snap.media_id}}/overlay.png" />
         </div>
         <div ng-switch-when="1">
           <video controls class="snap" ng-src="{{snap.filename}}"></video>
         </div>
       </div>
       <div>
-        {{snap.sender}}
+        {{snap}}
         <div class="pull-right">
           <i class="fa" ng-class="{'fa-times-circle-o': hoverTimes, 'fa-times-circle': !hoverTimes}" 
              ng-mouseenter="hoverTimes = true" ng-mouseleave="hoverTimes = false"

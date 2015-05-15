@@ -1,5 +1,5 @@
 angular.module('snap-ui')
-  .controller('HomeController', ['$scope', '$http', function($scope, $http) {
+  .controller('HomeController', ['$scope', '$http', '$interval', function($scope, $http, $interval) {
     var rawSnaps;
     
     $scope.numColumns = 4;
@@ -11,8 +11,10 @@ angular.module('snap-ui')
           $scope.snaps = _.chunk(response.data, $scope.numColumns);
         });
     }
-    
+
     $scope.refresh();
+    
+    $interval($scope.refresh, 5000);
 
     var pop = function(major, minor) {
       var output = rawSnaps.splice(major * $scope.numColumns + minor, 1)[0];

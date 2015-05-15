@@ -1,5 +1,4 @@
 @import url(http://nicholastodor.com/sf/usesf.css);
-
 body {
   margin-top: 60px;
   padding: 10px;
@@ -13,17 +12,31 @@ body {
   border-radius: 0px !important;
 }
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   font-family: "San Francisco Display", sans-serif !important;
 }
 
+.huge {
+  font-size: 128px;
+  margin-bottom: 36px;
+}
+
 .wrap {
-  word-wrap: break-word;  
+  word-wrap: break-word;
 }
 
 .snap {
   width: 100%;
   z-index: 100;
+  border: 5px solid white;
+  -webkit-box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.15);
+  margin-bottom: 5px;
 }
 
 .fa {
