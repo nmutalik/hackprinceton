@@ -6,4 +6,6 @@
 db_repository
 flask
 node_modules
-snap/*.jpg
+*.jpg
+*.mp4
+*.png
