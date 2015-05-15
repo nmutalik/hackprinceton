@@ -14,7 +14,8 @@ from docopt import docopt
 snapchat = Snapchat('secondwindsnaps', '2433fd63b5389757d0786ebf056a946e')
 
 def process_snap(snap, s=snapchat, path='app/static/snap/', quiet=False):
-    filename = '{0}.{1}'.format(snap['id'],
+    snap = snap['story']
+    filename = '{0}.{1}'.format(snap['media_id'],
                                     get_file_extension(snap['media_type']))
     snap['filename'] = 'snap/' + filename
     snap['mediatext'] = False
@@ -55,8 +56,12 @@ def root():
 
 @app.route('/api/snaps')
 def getSnaps():
-  snaps = filter(lambda snap: snap['status'] == 1, snapchat.get_snaps())
+  snaps = stories = snapchat._request("all_updates", {
+            'username': snapchat.username,
+            'update_timestamp': 0
+        }).json()['stories_response']['my_stories']
   snaps = map(process_snap, snaps)
+  print snaps
   return json.dumps(snaps)
 
 @app.route('/api/reject/', methods=['POST'])
